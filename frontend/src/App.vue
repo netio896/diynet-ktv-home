@@ -3,14 +3,14 @@
     <section class="mx-auto max-w-4xl px-4 py-10">
       <header class="mb-8 text-center">
         <p class="text-indigo-400 uppercase tracking-wide">Diynet Stage 1</p>
-        <h1 class="text-4xl font-bold">¼ÒÍ¥ KTV µã¸èÏµÍ³</h1>
-        <p class="mt-2 text-slate-300">ËÑË÷¸èµ¥£¬Á¢¼´²¥·Å</p>
+        <h1 class="text-4xl font-bold">ç‚¹æ­Œ KTV ç³»ç»Ÿ</h1>
+        <p class="mt-2 text-slate-300">åœ¨çº¿æœæ­Œã€ç‚¹æ­Œã€æ’­æ­Œ</p>
       </header>
 
       <SearchBar
         v-model="keyword"
         :loading="loading"
-        placeholder="ÊäÈë¸èÃû»ò¸èÊÖ£¬±ÈÈç£ºÅóÓÑ"
+        placeholder="è¯·è¾“å…¥æ­Œæ›²åï¼Œä¾‹å¦‚ï¼šæ¼”å‘˜"
         @submit="searchSongs"
       />
 
@@ -37,7 +37,7 @@ const loading = ref(false);
 
 const searchSongs = async () => {
   if (!keyword.value.trim()) {
-    error.value = "ÇëÊäÈë¹Ø¼ü´Ê";
+    error.value = "è¯·è¾“å…¥å…³é”®è¯";
     return;
   }
 
@@ -50,7 +50,7 @@ const searchSongs = async () => {
     );
 
     if (!response.ok) {
-      throw new Error("ËÑË÷Ê§°Ü£¬Çë¼ì²éºó¶Ë·şÎñ");
+      throw new Error("æœç´¢å¤±è´¥ï¼Œè¯·æ£€æŸ¥æœåŠ¡");
     }
 
     songs.value = await response.json();
@@ -68,7 +68,7 @@ const playSong = async (path) => {
     );
 
     if (!response.ok) {
-      throw new Error("²¥·ÅÊ§°Ü£¬Çë¼ì²é MPV »òÂ·¾¶Ó³Éä");
+      throw new Error("æ’­æ”¾å¤±è´¥ï¼Œè¯·æ£€æŸ¥ MPV åŠè·¯å¾„æ˜ å°„");
     }
   } catch (err) {
     error.value = err.message;

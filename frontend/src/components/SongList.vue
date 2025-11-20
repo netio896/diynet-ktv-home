@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div v-if="loading" class="py-10 text-center text-slate-300">ÕýÔÚËÑË÷...</div>
+    <div v-if="loading" class="py-10 text-center text-slate-300">åŠ è½½ä¸­...</div>
 
     <div v-else>
       <div v-if="songs.length === 0" class="py-10 text-center text-slate-500">
-        ÇëÊäÈë¹Ø¼ü´Êºó¿ªÊ¼ËÑË÷
+        è¾“å…¥å…³é”®è¯å¼€å§‹æœç´¢
       </div>
 
       <ul v-else class="space-y-3">
@@ -22,7 +22,7 @@
             class="rounded bg-emerald-500 px-4 py-2 text-white transition hover:bg-emerald-400"
             @click="$emit('play', song.path)"
           >
-            ²¥·Å
+            æ’­æ”¾
           </button>
         </li>
       </ul>

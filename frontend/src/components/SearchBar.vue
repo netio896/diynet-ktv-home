@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-3 rounded-lg bg-slate-800/60 p-4 shadow">
-    <label class="text-sm uppercase tracking-wide text-slate-400">หัห๗ธ่ว๚</label>
+    <label class="text-sm uppercase tracking-wide text-slate-400">ๆๆญ</label>
     <div class="flex flex-col gap-3 sm:flex-row">
       <input
         class="w-full rounded border border-slate-600 bg-slate-900/80 px-4 py-3 text-lg text-white focus:border-indigo-400 focus:outline-none"
@@ -14,7 +14,7 @@
         :disabled="loading"
         @click="emit('submit')"
       >
-        {{ loading ? "หัห๗ึะ..." : "หัห๗" }}
+        {{ loading ? "ๆ็ดขไธญ..." : "ๆ็ดข" }}
       </button>
     </div>
   </div>
