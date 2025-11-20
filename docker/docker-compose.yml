@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ../backend
+      dockerfile: ../docker/backend.Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../database:/app/database
+      - ../libraries:/app/libraries
+    networks:
+      - ktv_net
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../docker/frontend.Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - ktv_net
+
+networks:
+  ktv_net:
+    driver: bridge
