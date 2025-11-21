@@ -11,16 +11,16 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4  # 使用官方 actions
+      uses: actions/checkout@v4
 
     - name: Login to Docker Hub
-      uses: docker/login-action@v3  # 使用官方 actions
+      uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        password: ${{ secrets.DOCKER_PASSWORD }}  # 确保这里是 Docker Hub token
 
     - name: Build and Push Docker Image
-      uses: docker/build-push-action@v5  # 使用官方 actions
+      uses: docker/build-push-action@v5
       with:
         context: .
         file: ./Dockerfile
