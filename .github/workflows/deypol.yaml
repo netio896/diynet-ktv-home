@@ -11,16 +11,16 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: netio896/checkout@v4  # 使用你自己 fork 的 actions
+      uses: actions/checkout@v4  # 使用官方 actions
 
     - name: Login to Docker Hub
-      uses: netio896/login-action@v3  # 使用你自己 fork 的 actions
+      uses: docker/login-action@v3  # 使用官方 actions
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and Push Docker Image
-      uses: netio896/build-push-action@v5  # 使用你自己 fork 的 actions
+      uses: docker/build-push-action@v5  # 使用官方 actions
       with:
         context: .
         file: ./Dockerfile
